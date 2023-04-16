@@ -32,6 +32,39 @@ namespace SBS_2page_webApp.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult Update(Info_Class model)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var db = new DbContextES())
+                {
+                    // Get the current user's ID from the session variable
+                    int personId = (int)Session["UserId"];
+
+                    // Update the user's information in the database
+                    var info = db.Info.FirstOrDefault(i => i.PersonId == personId);
+                    info.TelNo = model.TelNo;
+                    info.CellNo = model.CellNo;
+                    info.AddressLine1 = model.AddressLine1;
+                    info.AddressLine2 = model.AddressLine2;
+                    info.AddressLine3 = model.AddressLine3;
+                    info.AddressCode = model.AddressCode;
+                    info.PostalAddress1 = model.PostalAddress1;
+                    info.PostalAddress2 = model.PostalAddress2;
+                    info.PostalCode = model.PostalCode;
+
+                    db.SaveChanges();
+                }
+
+                // Redirect the user back to the Info page
+                return RedirectToAction("Index");
+            }
+
+            // If the model state is not valid, return the view with the model
+            return View("Info", model);
+        }
+
 
 
 
