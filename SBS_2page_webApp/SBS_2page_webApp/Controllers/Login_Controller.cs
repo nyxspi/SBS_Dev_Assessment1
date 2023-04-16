@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SBS_2page_webApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,27 @@ namespace SBS_2page_webApp.Controllers
 {
     public class Login_Controller : Controller
     {
+        // login class that will display error if input is invalid
+        [HttpPost]
+        public ActionResult Login(string username, string password)
+        {
+            var person = DbContextES.Persons.FirstOrDefault(p => p.Username == username && p.Password == password);
+            if (person != null)
+            {
+                Session["PersonId"] = person.Id;
+                return RedirectToAction("Index", "Info");
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Invalid username or password.";
+                return View("Login");
+            }
+        }
+
+
+
+
+
         // GET: Login_
         public ActionResult Index()
         {
