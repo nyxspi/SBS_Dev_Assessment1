@@ -1,28 +1,45 @@
 ﻿
+@model SBS_2page_webApp.Models.Info_Class
 
-@{
-    ViewBag.Title = "Info";
-
+@using (Html.BeginForm("Update", "Info", FormMethod.Post))
+{
     <div class="form-group">
-        <label for="telNo">Telephone Number:</label>
-        <input type="text" class="form-control" id="telNo" name="telNo">
+        @Html.LabelFor(model => model.TelNo)
+        @Html.TextBoxFor(model => model.TelNo, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        <label for="cellNo">Cell Number:</label>
-        <input type="text" class="form-control" id="cellNo" name="cellNo">
+        @Html.LabelFor(model => model.CellNo)
+        @Html.TextBoxFor(model => model.CellNo, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        <label for="addressLine1">Address Line 1:</label>
-        <input type="text" class="form-control" id="addressLine1" name="addressLine1">
+        @Html.LabelFor(model => model.AddressLine1)
+        @Html.TextBoxFor(model => model.AddressLine1, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        <label for="addressLine2">Address Line 2:</label>
-        <input type="text" class="form-control" id="addressLine2" name="addressLine2">
+        @Html.LabelFor(model => model.AddressLine2)
+        @Html.TextBoxFor(model => model.AddressLine2, new { @class = "form-control" })
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(model => model.AddressLine3)
+        @Html.TextBoxFor(model => model.AddressLine3, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.AddressCode)
+        @Html.TextBoxFor(model => model.AddressCode, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PostalAddress1)
+        @Html.TextBoxFor(model => model.PostalAddress1, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PostalAddress2)
+        @Html.TextBoxFor(model => model.PostalAddress2, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PostalCode)
+        @Html.TextBoxFor(model => model.PostalCode, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
 }
 
 <h2>Info</h2>
-
-
-

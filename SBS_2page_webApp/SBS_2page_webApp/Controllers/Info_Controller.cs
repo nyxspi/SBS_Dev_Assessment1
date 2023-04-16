@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SBS_2page_webApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,37 @@ namespace SBS_2page_webApp.Controllers
 {
     public class Info_Controller : Controller
     {
-        // GET: Info_
+
+        public ActionResult Index()
+        {
+            if (Session["LoggedInUser"] == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+
+            using (var db = new DbContextES())
+            {
+                var loggedInUser = (Class_Person)Session["LoggedInUser"];
+                var userInfo = db.Info.FirstOrDefault(i => i.PersonId == loggedInUser.Id);
+
+                if (userInfo == null)
+                {
+                    userInfo = new Info_Class();
+                    userInfo.PersonId = loggedInUser.Id;
+                }
+
+                return View(userInfo);
+            }
+        }
+
+
+
+
+        /*// GET: Info_
         public ActionResult Index()
         {
             return View();
-        }
+        }*/
 
         // GET: Info_/Details/5
         public ActionResult Details(int id)
