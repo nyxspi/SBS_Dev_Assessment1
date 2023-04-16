@@ -10,11 +10,12 @@ namespace SBS_2page_webApp.Controllers
 {
     public class Login_Controller : Controller
     {
+        private readonly DbContextES db = new DbContextES();
         // login class that will display error if input is invalid
         /*[HttpPost]
         public ActionResult Login(string username, string password)
         {
-            var person = DbContext.Person.FirstOrDefault(p => p.Username == username && p.Password == password);
+            var person = db.Person.FirstOrDefault(p => p.Username == username && p.Password == password);
             if (person != null)
             {
                 Session["PersonId"] = person.Id;
