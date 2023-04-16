@@ -1,6 +1,7 @@
 ﻿using SBS_2page_webApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,10 +11,10 @@ namespace SBS_2page_webApp.Controllers
     public class Login_Controller : Controller
     {
         // login class that will display error if input is invalid
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult Login(string username, string password)
         {
-            var person = DbContextES.Persons.FirstOrDefault(p => p.Username == username && p.Password == password);
+            var person = DbContext.Person.FirstOrDefault(p => p.Username == username && p.Password == password);
             if (person != null)
             {
                 Session["PersonId"] = person.Id;
@@ -23,6 +24,27 @@ namespace SBS_2page_webApp.Controllers
             {
                 ViewBag.ErrorMessage = "Invalid username or password.";
                 return View("Login");
+            }
+        }*/
+
+        //the previous function did not work, so I created a new function that seems to be working
+        [HttpPost]
+        public ActionResult Login(LoginViewModel model)
+        {
+            using (var db = new DbContextES())
+            {
+                var person = db.Person.FirstOrDefault(p => p.Surname == model.Username && p.Password == model.Password);
+
+                if (person != null)
+                {
+                    Session["PersonId"] = person.Id;
+                    return RedirectToAction("Index", "Info");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Invalid username or password.");
+                    return View(model);
+                }
             }
         }
 
