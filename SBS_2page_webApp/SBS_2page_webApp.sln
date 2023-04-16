@@ -5,6 +5,12 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SBS_2page_webApp", "SBS_2page_webApp\SBS_2page_webApp.csproj", "{995CF0D4-19FB-4FCD-BA7E-A58670F6FE88}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{15947DFE-35BD-48B0-8419-C2A1FFB2944F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\OneDrive\Desktop\bootstrap-5.3.0-alpha3-dist\bootstrap-5.3.0-alpha3-dist\css\bootstrap.min.css = ..\..\..\..\OneDrive\Desktop\bootstrap-5.3.0-alpha3-dist\bootstrap-5.3.0-alpha3-dist\css\bootstrap.min.css
+		..\..\..\..\OneDrive\Desktop\bootstrap-5.3.0-alpha3-dist\bootstrap-5.3.0-alpha3-dist\js\bootstrap.min.js = ..\..\..\..\OneDrive\Desktop\bootstrap-5.3.0-alpha3-dist\bootstrap-5.3.0-alpha3-dist\js\bootstrap.min.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
