@@ -7,14 +7,14 @@ using System.Web.Mvc;
 
 namespace SBS_2page_webApp.Controllers
 {
-    public class Info_Controller : Controller
+    public class InfoController : Controller
     {
 
         public ActionResult Index()
         {
             if (Session["LoggedInUser"] == null)
             {
-                return RedirectToAction("Login", "Login_Controller");
+                return RedirectToAction("Login", "LoginController");
             }
 
             using (var db = new DbContextES())
@@ -24,8 +24,10 @@ namespace SBS_2page_webApp.Controllers
 
                 if (userInfo == null)
                 {
-                    userInfo = new Info_Class();
-                    userInfo.PersonId = loggedInUser.Id;
+                    userInfo = new Info_Class
+                    {
+                        PersonId = loggedInUser.Id
+                    };
                 }
 
                 return View(userInfo);

@@ -14,10 +14,18 @@ namespace SBS_2page_webApp
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-            name: "Login",
-            url: "Login/{action}/{id}",
-            defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
-        );
+                name: "Login",
+                url: "Login/{action}/{id}",
+                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
+            );
+
+
+            routes.MapRoute(
+                name: "Info",
+                url: "Info",
+                defaults: new { controller = "Info", action = "Index" }
+            );
+
 
 
             routes.MapRoute(

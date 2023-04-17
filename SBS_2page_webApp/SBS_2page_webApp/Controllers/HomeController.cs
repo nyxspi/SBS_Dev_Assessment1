@@ -8,15 +8,15 @@ namespace SBS_2page_webApp.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return RedirectToAction("Index", "Login_Controller");
-        }
-
         /*public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Login_Controller");
         }*/
+
+        public ActionResult Index()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {

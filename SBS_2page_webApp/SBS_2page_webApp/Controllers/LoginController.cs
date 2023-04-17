@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace SBS_2page_webApp.Controllers
 {
-    public class Login_Controller : Controller
+    public class LoginController : Controller
     {
         private readonly DbContextES db = new DbContextES();
 
@@ -22,13 +22,13 @@ namespace SBS_2page_webApp.Controllers
             else
             {
                 ModelState.AddModelError("", "Invalid username or password.");
-                return View("Login");
+                return View();
             }
         }
 
         public ActionResult Index()
         {
-            return View("Login");
+            return View();
         }
     }
 }

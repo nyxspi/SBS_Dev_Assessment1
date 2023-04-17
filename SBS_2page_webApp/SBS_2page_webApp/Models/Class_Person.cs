@@ -22,7 +22,7 @@ namespace SBS_2page_webApp.Models
         [StringLength(50)]
         public string Password { get; set; }
 
-        public DateTime? LastLogin { get; set; }
+        public DateTime LastLogin { get; set; }
 
     }
 }

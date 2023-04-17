@@ -8,7 +8,7 @@ namespace SBS_2page_webApp.Models
 {
     public class Info_Class
     {
-        public int Id { get; set; }
+
 
         [Required]
         public int PersonId { get; set; }
