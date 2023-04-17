@@ -14,7 +14,7 @@ namespace SBS_2page_webApp.Controllers
         {
             if (Session["LoggedInUser"] == null)
             {
-                return RedirectToAction("Login", "Login");
+                return RedirectToAction("Login", "Login_Controller");
             }
 
             using (var db = new DbContextES())

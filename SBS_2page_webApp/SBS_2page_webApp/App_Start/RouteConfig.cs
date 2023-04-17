@@ -15,9 +15,10 @@ namespace SBS_2page_webApp
 
             routes.MapRoute(
             name: "Login",
-            url: "Views/Login.cshtml",
-            defaults: new { controller = "Login", action = "Index" }
-            );
+            url: "Login/{action}/{id}",
+            defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
+        );
+
 
             routes.MapRoute(
                 name: "Default",

@@ -10,7 +10,7 @@ namespace SBS_2page_webApp.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Login", "Login_Controller");
+            return RedirectToAction("Index", "Login_Controller");
         }
 
         /*public ActionResult Index()
