@@ -1,6 +1,6 @@
-﻿using SBS_2page_webApp.Models;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
+using SBS_2page_webApp.Models;
 
 namespace SBS_2page_webApp.Controllers
 {
@@ -22,7 +22,7 @@ namespace SBS_2page_webApp.Controllers
             else
             {
                 ModelState.AddModelError("", "Invalid username or password.");
-                return View();
+                return View(model);
             }
         }
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace SBS_2page_webApp
@@ -15,18 +11,21 @@ namespace SBS_2page_webApp
 
             routes.MapRoute(
                 name: "Login",
-                url: "Login/{action}/{id}",
-                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
+                url: "Login/Index",
+                defaults: new { controller = "Login", action = "Index" }
             );
 
+            routes.MapRoute(
+                name: "LoginPost",
+                url: "Login/Login",
+                defaults: new { controller = "Login", action = "Login" }
+            );
 
             routes.MapRoute(
                 name: "Info",
-                url: "Info",
+                url: "Info/Index",
                 defaults: new { controller = "Info", action = "Index" }
             );
-
-
 
             routes.MapRoute(
                 name: "Default",
