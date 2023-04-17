@@ -10,7 +10,7 @@ namespace SBS_2page_webApp.Controllers
 {
     public class Login_Controller : Controller
     {
-        private readonly DbContextES db = new DbContextES();
+        //private readonly DbContextES db = new DbContextES();
         // login class that will display error if input is invalid
         /*[HttpPost]
         public ActionResult Login(string username, string password)
@@ -58,7 +58,7 @@ namespace SBS_2page_webApp.Controllers
         // GET: Login_
         public ActionResult Index()
         {
-            return View();
+            return View("Login");
         }
 
         // GET: Login_/Details/5

@@ -10,8 +10,13 @@ namespace SBS_2page_webApp.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Login", "Login_Controller");
         }
+
+        /*public ActionResult Index()
+        {
+            return View();
+        }*/
 
         public ActionResult About()
         {
