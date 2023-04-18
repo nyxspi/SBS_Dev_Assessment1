@@ -9,6 +9,8 @@ namespace SBS_2page_webApp
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+
             routes.MapRoute(
                 name: "Login",
                 url: "Login/Index",
